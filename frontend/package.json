@@ -1,10 +1,11 @@
 {
-  "name": "svelte-app",
+  "name": "good-reads-graphs-client",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
+    "build": "cross-env PUBLIC_URL=https://good-reads-graphs-server.herokuapp.com/ rollup -c",
+    "heroku-postbuild": "npm run build && cp -r ./public/* .",
+    "dev": "cross-env PUBLIC_URL=http://localhost:3000/ rollup -c -w",
     "start": "sirv public --no-clear",
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
@@ -14,11 +15,13 @@
     "@rollup/plugin-node-resolve": "^11.0.0",
     "@rollup/plugin-typescript": "^8.0.0",
     "@tsconfig/svelte": "^2.0.0",
+    "cross-env": "^7.0.3",
     "rollup": "^2.3.4",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-npm": "^2.0.0",
+    "rollup-plugin-replace": "^2.2.0",
     "rollup-plugin-svelte": "^7.0.0",
     "rollup-plugin-terser": "^7.0.0",
     "svelte": "^3.42.5",
@@ -31,5 +34,8 @@
     "axios": "^0.21.4",
     "sirv-cli": "^1.0.0",
     "svelte-frappe-charts": "^1.9.0"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }

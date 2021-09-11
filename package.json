@@ -1,0 +1,16 @@
+{
+  "name": "goodreads",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:frontend": "(cd frontend && npm start)",
+    "start:backend": "(cd backend && npm start)",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+  }
+}
